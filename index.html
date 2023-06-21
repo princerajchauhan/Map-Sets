@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map & Sets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <p data-text="Map & Sets">Map & Sets</p>
+    </header>
+
+    <div class="questions">
+
+        <!-- ************************* Question 1 ************************ -->
+        <div class="quesno">
+            <p class="ques"><span>Q1. </span>You are given a string (STR) of length N, consisting of only the lower case
+                English alphabet.
+                Your task is to remove all the duplicate occurrences of characters in the string.
+            </p>
+            <div class="ans seeCode">
+                <button onclick="seeHide1(this)">See Code</button>
+                <pre class="code" id="Code1">
+
+    let str = 'abcadeecfb'
+    console.log(Array.from(new Set(str)).join(''))
+                </pre>
+            </div>
+            <div class="ans"><span class="output">Output : </span>abcdef</div>
+            <hr size="3px" color="gray">
+        </div>
+
+        <!-- ************************* Question 2 ************************ -->
+        <div class="quesno">
+            <p class="ques"><span>Q2. </span>You are given a string (STR) of length N, you have to print the count of
+                all alphabet.(using maps)
+            </p>
+            <div class="ans seeCode">
+                <button onclick="seeHide2(this)">See Code</button>
+                <pre class="code" id="Code2">
+
+    let str = 'abcadeecfb'
+    const myMap = new Map()
+    for(let i=0; i < str.length; i++){
+        let char = str.charAt(i)
+        
+        if(myMap.has(char)){
+            let value = myMap.get(char)
+            myMap.set(char, value+1)
+        }
+        else{
+            myMap.set(char, 1)
+        }
+    }
+    for(let [key,value] of myMap){
+        console.log(key+ '=' +value)
+    }</pre>
+            </div>
+            <div class="ans" id="quesTwo"><span class="output">Output : </span>
+                <p>a=2<br>
+                    b=2<br>
+                    c=2<br>
+                    d=1<br>
+                    e=2<br>
+                    f=1
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

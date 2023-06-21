@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: azure;
+}
+
+header{
+    display: flex;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+header > p{
+    font-size: 50px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0);
+    position: relative;
+}
+header > p::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: olive;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 5px solid orangered;
+    /* border-bottom: 5px solid blue; */
+    animation: animate 5s linear infinite;
+}
+@keyframes animate {
+    0%{
+        width: 0;
+    }
+    70%{
+        width: 103%;
+    }
+}
+
+
+/* ************************************ QUESTIONS ****************************** */
+.questions{
+    margin: 50px 60px;
+}
+.quesno{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 50px;
+}
+.ques{
+    font-size: 20px;
+}
+span{
+    font-weight: bold;
+    color: red
+}
+.output{
+    font-size: 18px;
+    color: blue;
+}
+.ans{
+    margin-left: 70px;
+}
+.seeCode{
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+button{
+    padding: 9px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+}
+.code{
+    display: none;
+}
+#quesTwo{
+    display: flex;
+    gap: 10px;
+}
+pre{
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding-right: 15px;
+}
+
+
+/* ******************************* Responsive ************************** */
+
+@media screen and (max-width: 600px) {
+    .questions{
+        margin:  auto 40px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ans{
+        margin-left: 30px;
+    }
+    button{
+        padding: 6px;
+        font-size: 13px;
+    }
+    pre{
+        font-size: 12px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+    .seeCode{
+        flex-direction: column;
+    }
+    .ques{
+        font-size: 16px;
+    }
+    .output{
+        font-size: 15px;
+    }
+
+    header > p{
+        font-size: 25px;
+    }
+
+    header > p::before{
+        border-right: 2px solid orangered;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .questions{
+        margin:  auto 20px;
+    }
+}
